@@ -1,0 +1,85 @@
+services:
+  # TypeScript + Hono アプリ
+  typescript-app:
+    build:
+      context: ..
+      dockerfile: Docker/Dockerfile
+    container_name: ts-learning
+    working_dir: /app
+    volumes:
+      - ../src:/app/src
+    environment:
+      # PostgreSQL
+      - PGHOST=postgres
+      - PGUSER=devuser
+      - PGPASSWORD=devpass
+      - PGDATABASE=devdb
+      - PGPORT=5432
+      # Redis
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - COMPOSE_BAKE=true
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - db-net
+
+  # PostgreSQL
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: devuser
+      POSTGRES_PASSWORD: devpass
+      POSTGRES_DB: devdb
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d # 初期化スクリプト :contentReference[oaicite:11]{index=11}
+    ports:
+      - "5432:5432"
+    networks:
+      - db-net
+
+  # Redis (公式イメージ + 設定ファイル読み込み) :contentReference[oaicite:14]{index=14}
+  redis:
+    image: redis:latest
+    command: [ "redis-server", "/usr/local/etc/redis/redis.conf" ] # 設定適用 :contentReference[oaicite:15]{index=15}
+    volumes:
+      - redis-data:/data
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - "6379:6379"
+    networks:
+      - db-net
+
+  # Adminer (DB GUI)
+  adminer:
+    image: adminer:latest
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - db-net
+
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    ports:
+      - "9000:9000" # Web UI
+    volumes:
+      - portainer_data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - db-net
+
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+  redis-data:
+  portainer_data:
+
+
+networks:
+  db-net:
+    driver: bridge
