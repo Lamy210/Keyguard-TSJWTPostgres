@@ -7,7 +7,7 @@ services:
     container_name: ts-learning
     working_dir: /backend
     volumes:
-      - ../src:/backend
+      - ../backend:/backend
     environment:
       # PostgreSQL
       - PGHOST=postgres
