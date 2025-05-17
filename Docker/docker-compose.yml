@@ -5,9 +5,9 @@ services:
       context: ..
       dockerfile: Docker/Dockerfile
     container_name: ts-learning
-    working_dir: /app
+    working_dir: /backend
     volumes:
-      - ../src:/app/src
+      - ../src:/backend
     environment:
       # PostgreSQL
       - PGHOST=postgres
