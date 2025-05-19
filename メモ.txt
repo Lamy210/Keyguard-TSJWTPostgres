@@ -1,0 +1,41 @@
+
+・HSTS:HTTPS接続するやつ
+
+
+・leafletjs　GoogleMapとの違いを確認する
+
+
+
+・docsearch 
+https://docsearch.algolia.com/
+ドキュメント作った際に導入したいな....
+
+・vimeo 動画無料枠で入れるのもおもろいかも
+https://vimeo.com/
+・
+
+<決済系>
+・BitPay
+・Stripe
+決済系との連携を考えてDBを作っても面白いかも
+
+<異常検知系>
+・Sentry 
+・UptimeRobot :サーバーの問題やコーディングのバグが原因でサイトがダウンしていないかどうかを確認するために、サイトを頻繁に監視するように設計された Web ベースのソフトウェア
+
+
+Envoy :proxy
+Varnish :リバースキャッシュ　proxy
+
+Cart Functionality :カート
+
+vite
+
+
+
+Optimizely :ABテスト　フロントエンドを導入するならあり　ただ価格を要調査必須
+
+
+<通話系>
+・mediasoup
+・pion

@@ -1,7 +1,9 @@
 {
   "name": "backend",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "test": "NODE_ENV=test bun test"
+
   },
   "dependencies": {
     "hono": "^4.7.10"
