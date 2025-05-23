@@ -4,7 +4,8 @@
     "dev": "bun run --hot src/index.ts",
     "test": "NODE_ENV=test bun test",
     "lint-format": "bunx @biomejs/biome check --no-errors-on-unmatched --files-ignore-unknown=true --colors=off",
-    "type-check": "bunx tsc"
+    "type-check": "bunx tsc",
+    "lefthook": "lefthook"
   },
   "dependencies": {
     "hono": "^4.7.10"
