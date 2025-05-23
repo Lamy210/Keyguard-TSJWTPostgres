@@ -3,8 +3,8 @@
   "scripts": {
     "dev": "bun run --hot src/index.ts",
     "test": "NODE_ENV=test bun test",
-    "lint-format": "bunx @biomejs/biome check --no-errors-on-unmatched --files-ignore-unknown=true --colors=off",
-    "type-check": "bunx tsc",
+    "lint-format": "bun run biome format --write --files-ignore-unknown=true --colors=off; bun run biome check --files-ignore-unknown=true --colors=off",
+    "type-check": "bun run tsc --noEmit --skipLibCheck --strict",
     "lefthook": "lefthook"
   },
   "dependencies": {
