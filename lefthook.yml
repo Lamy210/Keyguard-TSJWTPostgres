@@ -1,0 +1,12 @@
+pre-commit:
+  parallel: true
+  commands:
+    type-check:
+      root: backend
+      glob: "**/*.{ts,tsx,js,jsx}"
+      run: bun run type-check
+    lint-format:
+      root: backend
+      glob: "**/*.{ts,tsx,js,jsx}"
+      run: bun run lint-format
+      stage_fixed: true
