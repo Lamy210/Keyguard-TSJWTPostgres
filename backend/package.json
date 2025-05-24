@@ -1,18 +1,18 @@
 {
-  "name": "backend",
-  "scripts": {
-    "dev": "bun run --hot src/index.ts",
-    "test": "NODE_ENV=test bun test",
-    "lint-format": "bun run biome format --write --files-ignore-unknown=true --colors=off; bun run biome check --files-ignore-unknown=true --colors=off",
-    "type-check": "bun run tsc --noEmit --skipLibCheck --strict",
-    "lefthook": "lefthook"
-  },
-  "dependencies": {
-    "hono": "^4.7.10"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@types/bun": "latest",
-    "typescript": "^5.8.3"
-  }
+	"name": "backend",
+	"scripts": {
+		"dev": "bun run --hot src/index.ts",
+		"test": "NODE_ENV=test bun test",
+		"lint-format": "bun run biome format --write --files-ignore-unknown=true --colors=off; bun run biome check --files-ignore-unknown=true --colors=off",
+		"type-check": "bun run tsc --noEmit --skipLibCheck --strict",
+		"lefthook": "lefthook"
+	},
+	"dependencies": {
+		"hono": "^4.7.10"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/bun": "latest",
+		"typescript": "^5.8.3"
+	}
 }
