@@ -1,18 +1,22 @@
 {
-	"name": "backend",
-	"scripts": {
-		"dev": "bun run --hot src/index.ts",
-		"test": "NODE_ENV=test bun test",
-		"lint-format": "bun run biome format --write --files-ignore-unknown=true --colors=off; bun run biome check --files-ignore-unknown=true --colors=off",
-		"type-check": "bun run tsc --noEmit --skipLibCheck --strict",
-		"lefthook": "lefthook"
-	},
-	"dependencies": {
-		"hono": "^4.7.10"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
-		"@types/bun": "latest",
-		"typescript": "^5.8.3"
-	}
+  "name": "backend",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "test": "NODE_ENV=test bun test",
+    "lint-format": "bun run biome format --write --files-ignore-unknown=true --colors=off; bun run biome check --files-ignore-unknown=true --colors=off",
+    "type-check": "bun run tsc --noEmit --skipLibCheck --strict",
+    "lefthook": "lefthook"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.44.2",
+    "hono": "^4.7.10",
+    "pg": "^8.16.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/bun": "latest",
+    "@types/pg": "^8.15.4",
+    "drizzle-kit": "^0.31.1",
+    "typescript": "^5.8.3"
+  }
 }

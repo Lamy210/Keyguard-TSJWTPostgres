@@ -1,12 +1,18 @@
 pre-commit:
-  parallel: true
+  parallel: false
   commands:
     type-check:
       root: backend
       glob: "**/*.{ts,tsx,js,jsx}"
-      run: bun run type-check
+      run: |
+        echo "Running type-check in $(pwd)"
+        ls -la
+        ~/.bun/bin/bun --version
+        ~/.bun/bin/bun run type-check
     lint-format:
       root: backend
       glob: "**/*.{ts,tsx,js,jsx}"
-      run: bun run lint-format
+      run: |
+        echo "Running lint-format in $(pwd)"
+        ~/.bun/bin/bun run lint-format
       stage_fixed: true
