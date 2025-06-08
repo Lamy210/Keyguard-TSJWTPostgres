@@ -27,7 +27,7 @@
 
 | カラム名 | データ型 | 制約 | 説明 |
 |:--------|:--------|:-----|:-----|
-| uuid | UUID | PRIMARY KEY | グローバル一意ユーザー識別子 |
+| uuid | UUID | PRIMARY KEY, DEFAULT gen_random_uuid() | グローバル一意ユーザー識別子（自動生成） |
 | id | BIGSERIAL | UNIQUE | 内部連番ID（分析・バッチ用） |
 | created_at | TIMESTAMP WITH TIME ZONE | DEFAULT CURRENT_TIMESTAMP | レコード作成日時 |
 | updated_at | TIMESTAMP WITH TIME ZONE | DEFAULT CURRENT_TIMESTAMP | レコード更新日時（トリガーで更新） |
