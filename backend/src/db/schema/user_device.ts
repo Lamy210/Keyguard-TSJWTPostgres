@@ -1,10 +1,10 @@
 import {
-  pgTable,
   bigserial,
-  uuid,
-  varchar,
+  pgTable,
   timestamp,
   uniqueIndex,
+  uuid,
+  varchar,
 } from "drizzle-orm/pg-core";
 import { users } from "./user";
 

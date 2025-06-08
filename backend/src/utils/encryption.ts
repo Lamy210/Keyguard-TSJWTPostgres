@@ -1,5 +1,10 @@
-import { createCipheriv, createDecipheriv, randomBytes, scrypt } from "crypto";
-import { promisify } from "util";
+import {
+  createCipheriv,
+  createDecipheriv,
+  randomBytes,
+  scrypt,
+} from "node:crypto";
+import { promisify } from "node:util";
 
 const ENCRYPTION_KEY =
   process.env.ENCRYPTION_KEY || "default-key-change-in-production";

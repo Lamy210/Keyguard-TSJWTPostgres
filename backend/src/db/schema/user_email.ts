@@ -1,13 +1,13 @@
+import { sql } from "drizzle-orm";
 import {
-  pgTable,
   bigserial,
-  uuid,
-  varchar,
   boolean,
+  pgTable,
   timestamp,
   uniqueIndex,
+  uuid,
+  varchar,
 } from "drizzle-orm/pg-core";
-import { sql } from "drizzle-orm";
 import { users } from "./user";
 
 export const userEmails = pgTable(

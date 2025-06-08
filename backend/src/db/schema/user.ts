@@ -1,4 +1,4 @@
-import { pgTable, uuid, bigserial, timestamp } from "drizzle-orm/pg-core";
+import { bigserial, pgTable, timestamp, uuid } from "drizzle-orm/pg-core";
 
 export const users = pgTable("users", {
   uuid: uuid("uuid").primaryKey().defaultRandom(),

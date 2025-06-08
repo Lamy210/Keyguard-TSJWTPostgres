@@ -1,14 +1,14 @@
 import {
-  pgTable,
   bigserial,
-  uuid,
-  varchar,
   boolean,
+  pgTable,
   timestamp,
   uniqueIndex,
+  uuid,
+  varchar,
 } from "drizzle-orm/pg-core";
-import { users } from "./user";
 import { bytea } from "../custom-types";
+import { users } from "./user";
 
 export const userMfaFactors = pgTable(
   "user_mfa_factors",

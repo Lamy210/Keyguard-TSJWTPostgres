@@ -1,4 +1,4 @@
-import { pgEnum, pgTable, uuid, timestamp, text } from "drizzle-orm/pg-core";
+import { pgEnum, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
 import { users } from "./user";
 
 export const userStatusEnum = pgEnum("user_status_enum", [
